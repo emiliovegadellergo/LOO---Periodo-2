@@ -1,0 +1,23 @@
+# PyCharm
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+
+# Java
+*.class
+*.jar
+
+# C#
+bin/
+obj/
+*.exe
+*.dll
+
+# C++
+*.o
+*.out
+
+# OS
+.DS_Store
