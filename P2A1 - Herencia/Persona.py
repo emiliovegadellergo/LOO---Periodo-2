@@ -1,9 +1,9 @@
 class Persona:
-    def __init__(self, n="", a="", g="", e =0):
-        self.__nombre = n
-        self.__apellido = a
-        self.__genero = g
-        self.__edad = e
+    def __init__(self, nombre="", apellido="", genero="", edad =0):
+        self.__nombre = nombre
+        self.__apellido = apellido
+        self.__genero = genero
+        self.__edad = edad
 
     #nombre: getter y setter
     @property
@@ -11,8 +11,8 @@ class Persona:
         return self.__nombre
 
     @nombre.setter
-    def nombre(self, n):
-        self.__nombre = n
+    def nombre(self, nombre):
+        self.__nombre = nombre
 
     #apellido: getter y setter
     @property
@@ -20,8 +20,8 @@ class Persona:
         return self.__apellido
 
     @apellido.setter
-    def apellido(self, a):
-        self.__apellido = a
+    def apellido(self, apellido):
+        self.__apellido = apellido
 
     #genero: getter y setter
     @property
@@ -29,16 +29,16 @@ class Persona:
         return self.__genero
 
     @genero.setter
-    def genero(self, g):
-        self.__genero = g
+    def genero(self, genero):
+        self.__genero = genero
 
     #edad: getter y setter
     @property
     def edad(self):
         return self.__edad
     @edad.setter
-    def edad(self, e):
-        self.__edad = e
+    def edad(self, edad):
+        self.__edad = edad
 
     def printPersona(self):
         print(f"Nombre: {self.nombre}")
@@ -47,10 +47,10 @@ class Persona:
         print(f"Edad: {self.edad}")
 
 class Paciente(Persona):
-    def __init__(self, n="", a="", g="", e=0, al=0.0, p=0.0):
-        super().__init__(n, a, g, e)
-        self.__altura = al
-        self.__peso = p
+    def __init__(self, nombre="", apellido="", genero="", edad=0, altura=0.0, peso=0.0):
+        super().__init__(nombre, apellido, genero, edad)
+        self.__altura = altura
+        self.__peso = peso
 
     #altura: getter y setter
     @property
@@ -58,8 +58,8 @@ class Paciente(Persona):
         return self.__altura
 
     @altura.setter
-    def altura(self, al):
-        self.__altura = al
+    def altura(self, altura):
+        self.__altura = altura
 
     #peso: getter y setter
 
@@ -68,11 +68,11 @@ class Paciente(Persona):
         return self.__peso
 
     @peso.setter
-    def peso(self, p):
-        self.__peso = p
+    def peso(self, peso):
+        self.__peso = peso
 
-    def imc(self, al, p):
-        return p / (al**2)
+    def imc(self, altura, peso):
+        return peso / (altura**2)
 
     def printPaciente(self):
         self.printPersona()
@@ -81,29 +81,47 @@ class Paciente(Persona):
         print(f"IMC: {self.imc(self.__altura, self.__peso)}")
 
 class Medico(Persona):
-    def __init__(self, n="", a="", g="", e=0, esp="",c=0):
-        super().__init__(n, a, g, e)
-        self.__especialidad = esp
-        self.__cedulaProfesional = c
+    def __init__(self, nombre="", apellido="", genero="", edad=0, especialidad="",cedulaProfesional=0):
+        super().__init__(nombre, apellido, genero, edad)
+        self.__especialidad = especialidad
+        self.__cedulaProfesional = cedulaProfesional
 
     @property
     def especialidad(self):
         return self.__especialidad
 
     @especialidad.setter
-    def especialidad(self, esp):
-        self.__especialidad = esp
+    def especialidad(self, especialidad):
+        self.__especialidad = especialidad
 
     @property
     def cedulaProfesional(self):
         return self.__cedulaProfesional
 
     @cedulaProfesional.setter
-    def cedulaProfesional(self, c):
-        self.__cedulaProfesional = c
+    def cedulaProfesional(self, cedulaProfesional):
+        self.__cedulaProfesional = cedulaProfesional
 
     def printMedico(self):
-        self.printMedico()
-        print(f"Especialidad: {self.especialidad}")
-        print(f"Cedula: {self.cedulaProfesional}")
+        self.printPersona()
+        print(f"Especialidad: {self.__especialidad}")
+        print(f"Cedula: {self.__cedulaProfesional}")
 
+class PacienteExterno(Paciente):
+    def __init__(self, nombre="", apellido="", genero="", edad=0, altura=0.0, peso=0.0, noConsultorio=0, horario=0 ,fecha=""):
+        super().__init__(nombre, apellido, genero, edad, altura, peso)
+        self.__noConsultorio = noConsultorio
+        self.__horario = horario
+        self.__fecha = fecha
+
+    def examenFisico(self):
+        print("Se realizó el examen físico al paciente")
+
+class PacienteHospitalizado(Paciente):
+    def __init__(self, nombre="", apellido="", genero="", edad=0, altura=0.0, peso=0.0, habitacion=0, tipoCirugia=""):
+        super().__init__(nombre, apellido, genero, edad, altura, peso)
+        self.__habitacion = habitacion
+        self.__tipoCirugia = tipoCirugia
+
+    def indicaciones(self):
+        print("Las indicaciones para el hospitalizado son: ")
