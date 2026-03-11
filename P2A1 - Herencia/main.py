@@ -1,3 +1,9 @@
+'''
+Emilio Vega de Llergo Vargas
+00549955
+10/03/2025
+'''
+
 from Persona import Persona, Paciente, Medico, PacienteExterno, PacienteHospitalizado
 
 print("BIENVENIDO AL EMR DEL HOSPITAL STAR MEDICA")

@@ -1,3 +1,9 @@
+'''
+Emilio Vega de Llergo Vargas
+00549955
+10/03/2025
+'''
+
 class Persona:
     def __init__(self, nombre="", apellido="", genero="", edad =0):
         self.__nombre = nombre
