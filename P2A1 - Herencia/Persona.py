@@ -1,4 +1,5 @@
 '''
+P2A1 - Herencia
 Emilio Vega de Llergo Vargas
 00549955
 10/03/2025
