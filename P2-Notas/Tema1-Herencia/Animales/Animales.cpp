@@ -1,5 +1,5 @@
 #include <iostream>
-#include ≤Animales.h>
+#include <Aminales.h>
 
 Mamifero::Mamifero(string n, double p) {
     this -> nombre = n;
