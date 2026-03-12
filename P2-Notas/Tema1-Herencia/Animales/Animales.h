@@ -24,7 +24,7 @@ public:
 
 class Vaca : public Mamifero {
 private:
-    double listrosDeLeche;
+    double litrosDeLeche;
 public:
     Vaca(string, double, double);
     void calcularCantidadComida();

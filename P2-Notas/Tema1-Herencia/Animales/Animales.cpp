@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Aminales.h>
+#include "Animales.h"
 
 Mamifero::Mamifero(string n, double p) {
     this -> nombre = n;
@@ -17,8 +17,8 @@ string Mamifero::toString() {
 }
 
 /************************ CLASE GATO ********************/
-Gato::Gato(string , double p, int b) : Mamifero (n, p) {
-    this -> bigotes = b;
+Gato::Gato(string n, double p, int b) : Mamifero (n, p) {
+    this -> nBigotes = b;
 }
 
 string Gato::toString() {
@@ -38,7 +38,7 @@ string Vaca::toString() {
 }
 
 /************************ CLASE BALLENA ********************/
-Ballena::Ballena(string n, double p) : mamifero(n,p) {
+Ballena::Ballena(string n, double p) : Mamifero(n,p) {
 }
 string Ballena::toString() {
     return "BALLENA" + Mamifero::toString();
