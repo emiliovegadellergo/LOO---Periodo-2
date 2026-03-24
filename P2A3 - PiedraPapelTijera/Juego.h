@@ -1,3 +1,7 @@
+//Emilio Vega de Llergo Vargas
+//00549955
+//P2A3 Piedra Papel Tijera
+
 #ifndef JUEGO_H
 #define JUEGO_H
 
